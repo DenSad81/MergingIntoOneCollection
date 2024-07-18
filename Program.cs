@@ -32,27 +32,10 @@ class Program
 
     static void AddArrayToList(string[] array, List<string> list)
     {
-        for (int i = 0; i < array.Length; i++)
+        foreach (var item in array)
         {
-            bool isRepit = false;
-
-            for (int j = 0; j < i; j++)
-            {
-                if (array[i] == array[j])
-                    isRepit = true;
-            }
-
-            if (isRepit == false)
-            {
-                foreach (var element in list)
-                {
-                    if (element == array[i])
-                        isRepit = true;
-                }
-
-                if ((isRepit == false))
-                    list.Add(array[i]);
-            }
+            if (list.Contains(item) == false)
+                list.Add(item);
         }
     }
 
